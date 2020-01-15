@@ -15,9 +15,8 @@ class UserController < ApplicationController
     post '/users/signup' do
         #Create user and navigate to home page
         if !User.find_by username: params[:user][:username]
-            binding.pry
             @user = User.create(params[:user])
-            @session[:id] = @user.id
+            session[:id] = @user.id
         else 
             "This user already exists"
         end
