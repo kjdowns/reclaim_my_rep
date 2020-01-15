@@ -1,0 +1,30 @@
+<h1>Create Account</h1>
+<h3>Please fill out the account creation form to get started!</h3>
+<form action="" method="POST">
+    <p>
+        <label for="user_name">Name: </label>
+        <input type="text" name="user[name]" id="user_name">
+    </p>
+    <p>
+        <label for="user_address_street">Address: </label>
+        <input type="text" name="user[address][]" id="user_address_street">
+    </p>
+    <p>
+        <label for="user_address">City: </label>
+        <input type="text" name="user[address][]" id="user_address_city">
+    </p>
+    <p>
+        <label for="user_address">State: </label>
+        <input type="text" name="user[address][]" id="user_address_state">
+    </p>
+    <p>
+        <label for="">Username: </label>
+        <input type="text" name="user[username]" id="user_username">
+    </p>
+    <p>
+        <label for="user_password">Password: </label>
+        <input type="password" name="user[password]" id="user_password">
+    </p>
+    <input type="submit" id="create_account" value="Create Account">
+
+</form>
