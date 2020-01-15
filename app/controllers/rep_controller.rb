@@ -6,7 +6,6 @@ class RepController < ApplicationController
     end
 
     post '/reps/new' do
-        binding.pry
         if params[:user]
             "Finding your rep"
         else
