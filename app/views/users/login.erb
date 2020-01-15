@@ -1,1 +1,13 @@
-This is a log in page
+<h1>Log in</h1>
+<h3>Please enter your credentials to log in</h3>
+<form action="/users/login" method="POST">
+    <p>
+        <label for="username">Username: </label>
+        <input type="text" name="user[username]" id="username">
+    </p>
+    <p>
+        <label for="password">Password: </label>
+        <input type="password" name="user[password]" id="password">
+    </p>
+    <input type="submit" id="login" value="Log In">
+</form>
