@@ -6,11 +6,15 @@ class RepController < ApplicationController
     end
 
     post '/reps/new' do
-        if params[:user]
-            "Finding your rep"
-        else
             "Creating your rep"
-        end
+    end
+
+    get '/find_my_reps/' do
+        @user = current_user
+        result = RepApi.get_reps('/representatives',{address: @user.address, levels: 'country'})
+        sen1 = result[2]
+        sen2 = result[3]
+        rep1 = result[4]
     end
 
 end

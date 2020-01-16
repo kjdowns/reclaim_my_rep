@@ -7,4 +7,23 @@ class RepAPI
         results = get(path, query: query)
         officials = results["officials"]
     end
+
+    def self.create_rep_from_api(official, i)
+        rep = Rep.new
+        if i == 2 || i == 3
+            rep.title = "Senator"
+        else
+            rep.title = "Congressperson"
+        end
+        rep.name = official[i]["name"]
+        rep.address = official[i]["address"][0].map {|k,v| v}
+        rep.party = official[i]["party"]
+        rep.phone = official[i]["phones"][0]
+        rep.website = official[i]["urls"][0]
+        rep.photo = official[i]["photoUrl"]
+        rep.facebook = official[i]["channels"][0]["id"]
+        rep.twitter = official[i]["channels"][1]["id"]
+        rep.save
+    end
+
 end

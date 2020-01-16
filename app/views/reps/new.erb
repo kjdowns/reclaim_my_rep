@@ -7,8 +7,7 @@ If one is not found, you will be redirected to create your representative manual
 
 <h2>Find My Reps</h2>
 
-<form action="/reps/new" method="POST">
-    <input type="hidden" name="user[address]" value="<%= @user.address %>">
+<form action="/find_my_reps" method="GET">
     <input type="submit" id="find_my_reps" value="Find My Reps">
 </form>
 
