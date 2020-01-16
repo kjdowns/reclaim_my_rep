@@ -10,7 +10,7 @@ class UserController < ApplicationController
 
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
-            "Logged in successfully"
+            redirect '/reps/home'
         end
     end
 
@@ -24,7 +24,7 @@ class UserController < ApplicationController
         @user = User.new(params[:user])
         if @user.save
             session[:user_id] = @user.id
-            redirect '/users/login'
+            redirect '/reps/home'
         else 
             "This user already exists"
         end

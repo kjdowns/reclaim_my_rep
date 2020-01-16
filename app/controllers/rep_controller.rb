@@ -18,4 +18,8 @@ class RepController < ApplicationController
         "Reps Added!"
     end
 
+    get '/reps/home' do
+        erb :'reps/home'
+    end
+
 end
