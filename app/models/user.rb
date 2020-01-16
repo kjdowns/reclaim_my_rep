@@ -3,6 +3,4 @@ class User < ActiveRecord::Base
     has_many :reps
     has_many :contacts
 
-
-
 end

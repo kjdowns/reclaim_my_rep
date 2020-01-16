@@ -8,7 +8,7 @@ class RepAPI
         officials = results["officials"]
     end
 
-    def self.create_rep_from_api(official, i)
+    def self.create_rep_from_api(official, i, current_user)
         rep = Rep.new
         if i == 2 || i == 3
             rep.title = "Senator"
@@ -24,6 +24,7 @@ class RepAPI
         rep.facebook = official[i]["channels"][0]["id"]
         rep.twitter = official[i]["channels"][1]["id"]
         rep.save
+        current_user.reps << rep
     end
 
 end

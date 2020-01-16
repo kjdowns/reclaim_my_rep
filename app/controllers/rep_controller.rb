@@ -9,12 +9,13 @@ class RepController < ApplicationController
             "Creating your rep"
     end
 
-    get '/find_my_reps/' do
-        @user = current_user
-        result = RepApi.get_reps('/representatives',{address: @user.address, levels: 'country'})
-        sen1 = result[2]
-        sen2 = result[3]
-        rep1 = result[4]
+    get '/find_my_reps' do
+        result = RepAPI.get_reps('/representatives',{address: current_user.address, levels: 'country'})
+        RepAPI.create_rep_from_api(result, 2, current_user)
+        RepAPI.create_rep_from_api(result, 3, current_user)
+        RepAPI.create_rep_from_api(result, 4, current_user)
+        @user_reps = current_user.reps
+        "Reps Added!"
     end
 
 end
