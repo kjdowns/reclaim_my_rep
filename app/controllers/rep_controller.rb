@@ -6,7 +6,9 @@ class RepController < ApplicationController
     end
 
     post '/reps/new' do
-            "Creating your rep"
+        params[:rep][:address] = params[:rep][:address].join(",")
+        current_user.reps << Rep.create(params[:rep])
+        redirect '/reps/home'
     end
 
     get '/find_my_reps' do
