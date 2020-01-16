@@ -5,6 +5,6 @@
 <% current_user.reps.each do |rep| %>
     <h3><%=rep.title%> - <%=rep.name%></h3>
     <div>
-        <a href="/reps/show/<%=rep.id%>">Details</a> | <a href="">Add Contact</a> | <a href="/reps/edit/<%=rep.id%>">Edit</a> | <a href="">Delete</a>
+        <a href="/reps/show/<%=rep.id%>">Details</a> | <a href="">Add Contact</a> | <a href="/reps/edit/<%=rep.id%>">Edit</a> | <a href="/reps/delete/<%=rep.id%>">Delete</a>
     </div>
 <% end %>

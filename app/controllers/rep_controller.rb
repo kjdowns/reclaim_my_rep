@@ -37,4 +37,14 @@ class RepController < ApplicationController
         erb :'reps/show_id'
     end
 
+    get '/reps/delete/show/:id' do
+        Rep.find(params[:id]).destroy
+        redirect '/reps/show'
+    end
+
+    get '/reps/delete/:id' do
+        Rep.find(params[:id]).destroy
+        redirect '/reps/home'
+    end
+
 end
