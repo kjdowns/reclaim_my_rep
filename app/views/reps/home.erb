@@ -1,10 +1,10 @@
 <h1><%= current_user.name %>'s Reps</h1>
 <div>
-    <a href="">Add Rep</a> | <a href="">View All Reps</a> | <a href="">Delete All Reps</a>
+    <a href="/reps/new">Add Rep</a> | <a href="/reps/show">View All Reps</a> | <a href="">View All Contacts</a> | <a href="">Delete All Reps</a>
 </div>
 <% current_user.reps.each do |rep| %>
     <h3><%=rep.title%> - <%=rep.name%></h3>
     <div>
-        <a href="">Details</a> | <a href="">Add Contact</a> | <a href="">Edit</a> | <a href="">Delete</a>
+        <a href="">Details</a> | <a href="">Add Contact</a> | <a href="/reps/edit/<%=rep.id%>">Edit</a> | <a href="">Delete</a>
     </div>
 <% end %>

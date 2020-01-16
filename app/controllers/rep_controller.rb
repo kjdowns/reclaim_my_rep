@@ -24,4 +24,12 @@ class RepController < ApplicationController
         erb :'reps/home'
     end
 
+    get '/reps/show' do
+        erb :'reps/show'
+    end
+
+    get '/reps/edit/:id' do
+        "Edit page for #{params[:id]}"
+    end
+
 end
