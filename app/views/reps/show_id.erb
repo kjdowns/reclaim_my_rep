@@ -1,0 +1,30 @@
+<%address = @rep.address.split(",")%>
+    <div>
+        <h3><%=@rep.title%> - <%=@rep.name%></h3>
+        <ul>
+            <li>
+                Address: <%=address[0].tr('[\"]', '')%><br>
+                City: <%=address[1].tr('[\"]', '')%><br>
+                State: <%=address[2].tr('[\"]', '')%><br>
+                Zip: <%=address[3].tr('[\"]', '')%>
+            </li>
+            <li>
+                Party: <%=@rep.party%>
+            </li>
+            <li>
+                Phone: <%=@rep.phone%>
+            </li>
+            <li>
+                Website: <a href="<%=@rep.website%>" target="_blank"><%=@rep.website%></a>
+            </li>
+            <li>
+                Facebook: <a href="https://www.facebook.com/<%=@rep.facebook%>" target="_blank"><%=@rep.facebook%></a>
+            </li>
+            <li>
+                Twitter: <a href="https://twitter.com/<%=@rep.twitter%>" target="_blank"><%=@rep.twitter%></a>
+            </li>
+        </ul>
+        <div>
+            <a href="">Contact</a> | <a href="">View All Contacts</a> | <a href="/reps/edit/<%=@rep.id%>">Edit Rep</a> | <a href="/reps/delete/<%=@rep.id%>">Delete Rep</a>
+        </div>
+    </div>

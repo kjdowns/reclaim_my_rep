@@ -32,4 +32,9 @@ class RepController < ApplicationController
         "Edit page for #{params[:id]}"
     end
 
+    get '/reps/show/:id' do
+        @rep = Rep.find(params[:id])
+        erb :'reps/show_id'
+    end
+
 end
