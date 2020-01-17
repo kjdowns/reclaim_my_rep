@@ -1,0 +1,21 @@
+<h1>Account Information</h1>
+<div>
+    <ul>
+        <li>
+            Name: <%=current_user.name%>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            Address: <%=current_user.address%>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            Username: <%=current_user.username%>
+        </li>
+    </ul>
+</div>
+<div>
+    <a href="/users/edit">Edit Account</a> | <a href="/users/delete">Delete Account</a> 
+</div>

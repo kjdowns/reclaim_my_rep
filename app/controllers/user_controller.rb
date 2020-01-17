@@ -33,6 +33,8 @@ class UserController < ApplicationController
         end
     end
 
-    
+    get '/users/profile' do
+        erb :'users/profile'
+    end
 
 end
