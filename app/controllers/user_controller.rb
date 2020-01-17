@@ -5,7 +5,6 @@ class UserController < ApplicationController
     end
 
     post '/users/login' do
-        # Log user in and navigate to home page
         user = User.find_by(:username => params[:user][:username])
 
         if user && user.authenticate(params[:user][:password])
@@ -14,12 +13,16 @@ class UserController < ApplicationController
         end
     end
 
+    get 'users/logout' do
+        session.clear
+        redirect '/'
+    end
+
     get '/users/signup' do
         erb :'users/signup'
     end
 
     post '/users/signup' do
-        #Create user and navigate to home page
         params[:user][:address] = params[:user][:address].join(" ")
         @user = User.new(params[:user])
         if @user.save
@@ -29,5 +32,7 @@ class UserController < ApplicationController
             "This user already exists"
         end
     end
+
+    
 
 end
