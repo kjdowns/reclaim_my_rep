@@ -55,4 +55,9 @@ class UserController < ApplicationController
         end
     end
 
+    get '/users/delete' do
+        current_user.destroy
+        redirect '/'
+    end
+
 end
