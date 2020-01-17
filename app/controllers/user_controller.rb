@@ -10,10 +10,12 @@ class UserController < ApplicationController
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
             redirect '/reps/home'
+        else
+            "error message"
         end
     end
 
-    get 'users/logout' do
+    get '/users/logout' do
         session.clear
         redirect '/'
     end
@@ -35,6 +37,22 @@ class UserController < ApplicationController
 
     get '/users/profile' do
         erb :'users/profile'
+    end
+
+    get '/users/edit' do
+        erb :'users/edit'
+    end
+
+    patch '/users/edit' do
+        if current_user.authenticate(params[:user][:current_password])
+            User.update(current_user.id, name: params[:user][:name], address: params[:user][:address], username: params[:user][:username])
+            if !params[:user][:password].empty?
+                User.update(current_user.id, password: params[:user][:password])
+            end
+            redirect 'users/profile'
+        else
+            "Incorrect password"
+        end
     end
 
 end

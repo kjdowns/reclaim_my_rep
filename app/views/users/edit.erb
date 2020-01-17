@@ -1,0 +1,22 @@
+<h1>Edit Account Information</h1>
+<div>
+    <form action="/users/edit" method="POST">
+        <input type="hidden" id="hidden" name="_method" value="patch">
+        <label for="user_name">Name: </label>
+        <input type="text" name="user[name]" id="user_name" value="<%=current_user.name%>">
+        <br><br>
+        <label for="user_address">Address: </label>
+        <input type="text" name="user[address]" id="user_address" value="<%=current_user.address%>">
+        <br><br>
+        <label for="user_username">Username: </label>
+        <input type="text" name="user[username]" id="user_username" value="<%=current_user.username%>">
+        <br><br>
+        <label for="user_new_password">New Password: </label>
+        <input type="password" name="user[password]" id="user_password">
+        <br><br>
+        <label for="user_current_password">Current Password: </label>
+        <input type="password" name="user[current_password]" id="user_current_password" required>
+        <br><br>
+        <input type="submit" id="edit_account" value="Save Changes">
+    </form>
+</div>
