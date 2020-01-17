@@ -44,6 +44,11 @@ class RepController < ApplicationController
         erb :'reps/show_id'
     end
 
+    get '/reps/delete/all' do
+        Rep.where(user_id: current_user).destroy_all
+        redirect '/reps/home'
+    end
+
     get '/reps/delete/show/:id' do
         Rep.find(params[:id]).destroy
         redirect '/reps/show'
