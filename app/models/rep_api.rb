@@ -17,6 +17,7 @@ class RepAPI
         end
         rep.name = official[i]["name"]
         rep.address = official[i]["address"][0].map {|k,v| v}
+        rep.address = rep.address.tr('[\"]', '')
         rep.party = official[i]["party"]
         rep.phone = official[i]["phones"][0]
         rep.website = official[i]["urls"][0]

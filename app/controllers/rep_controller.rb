@@ -17,7 +17,7 @@ class RepController < ApplicationController
         RepAPI.create_rep_from_api(result, 3, current_user)
         RepAPI.create_rep_from_api(result, 4, current_user)
         @user_reps = current_user.reps
-        "Reps Added!"
+        redirect '/reps/home'
     end
 
     get '/reps/home' do
@@ -29,7 +29,14 @@ class RepController < ApplicationController
     end
 
     get '/reps/edit/:id' do
-        "Edit page for #{params[:id]}"
+        @rep = Rep.find(params[:id])
+        erb :'reps/edit'
+    end
+
+    patch '/reps/edit/:id' do
+        params[:rep][:address] = params[:rep][:address].join(",")
+        Rep.update(params[:id], params[:rep])
+        redirect "/reps/show/#{params[:id]}"
     end
 
     get '/reps/show/:id' do
