@@ -9,6 +9,16 @@ class ContactController < ApplicationController
         @contact = Contact.create(params[:contacts])
         current_user.contacts << @contact
         Rep.find(params[:id]).contacts << @contact 
+        redirect "/contacts/show/#{params[:id]}"
+    end
+
+    get '/contacts/show' do
+        erb :'contacts/show'
+    end
+
+    get '/contacts/show/:id' do
+        @rep = Rep.find(params[:id])
+        erb :'contacts/show_id'
     end
 
 end

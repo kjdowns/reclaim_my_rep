@@ -1,6 +1,6 @@
 <h1><%= current_user.name %>'s Reps</h1>
 <div>
-    <a href="/reps/new">Add Rep</a> | <a href="/reps/show">View All Reps</a> | <a href="">View All Contacts</a> | <a href="/reps/delete/all">Delete All Reps</a>
+    <a href="/reps/new">Add Rep</a> | <a href="/reps/show">View All Reps</a> | <a href="/contacts/show">View All Contacts</a> | <a href="/reps/delete/all">Delete All Reps</a>
 </div>
 <% current_user.reps.each do |rep| %>
     <h3><%=rep.title%> - <%=rep.name%></h3>
