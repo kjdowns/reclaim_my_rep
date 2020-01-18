@@ -33,4 +33,10 @@ class ContactController < ApplicationController
         redirect "/contacts/show/#{Contact.find(params[:id]).rep_id}"
     end
 
+    get '/contacts/delete/:id' do
+        @rep_id = Contact.find(params[:id]).rep_id
+        Contact.destroy(params[:id])
+        redirect "/contacts/show/#{@rep_id}"
+    end
+
 end
