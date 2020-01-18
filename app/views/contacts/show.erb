@@ -1,1 +1,14 @@
-View All rep Contacts page
+<h1>All Contacts</h1>
+
+<%@reps.each do |rep|%>
+    <%contacts = Contact.where("rep_id = ? AND user_id = ?", rep.id, current_user.id)%>
+    <div>
+        <h2>Your Contacts with <%=rep.name%></h2>
+        <%contacts.each do |contact|%>
+            <h4>Issue: <%=contact.issue%></h4>
+            <%=contact.description%>
+            <br><br>
+            <a href="">Edit</a> | <a href="">Delete</a>
+    <%end%>
+    </div>
+<%end%>
