@@ -1,0 +1,39 @@
+<h1>Create New Contact</h1>
+<div>
+    <h2><%=@rep.title%> - <%=@rep.name%></h2>
+    <h3>Contact Pages:</h3>
+    <p>
+        Below are a list of contact pages we have for <%=@rep.name%> - 
+        Contacts can be updated by editing your Rep's page <a href="/reps/edit/<%=@rep.id%>">here.</a> 
+    </p>
+    <ul>
+        <%if exists?(@rep.website)%>
+            <li>
+                Website: <a href="<%=@rep.website%>" target="_blank"><%=@rep.website%></a>
+            </li>
+        <% end %>
+        <%if exists?(@rep.facebook)%>
+            <li>
+                Facebook: <a href="<%=normalize_contact(@rep.facebook, "facebook")%>" target="_blank"><%=normalize_contact(@rep.facebook, "facebook")%></a>
+            </li>
+        <% end %>
+        <%if exists?(@rep.twitter)%>
+            <li>
+                Twitter: <a href="<%=normalize_contact(@rep.twitter, "twitter")%>" target="_blank"><%=normalize_contact(@rep.twitter, "twitter")%></a>
+            </li>
+        <% end %>
+    </ul>
+</div>
+<div>
+    <h3>New Contact</h3>
+    <form action="/contacts/new/<%=@rep.id%>" method="POST">
+        <label for="contacts_issue">Issue: </label>
+        <input type="text" name="contacts[issue]" id="contacts_issue">
+        <br><br>
+        Enter a description below:
+        <br><br>
+        <textarea rows="10" cols="50" name="contacts[description]"></textarea>
+        <br><br>
+        <input type="submit" id="create_contact" value="Create Contact">
+    </form>
+</div>

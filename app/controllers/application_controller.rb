@@ -20,6 +20,18 @@ class ApplicationController < Sinatra::Base
             User.find(session[:user_id])
         end
 
+        def exists?(attr)
+            !!attr
+        end
+
+        def normalize_contact(contact, type)
+            if contact.include? "#{type}"
+                contact
+            else
+                s = "https://www.#{type}.com/#{contact}"
+            end
+        end
+
     end
 
 end
