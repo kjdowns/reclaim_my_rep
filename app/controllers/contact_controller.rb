@@ -23,4 +23,14 @@ class ContactController < ApplicationController
         erb :'contacts/show_id'
     end
 
+    get '/contacts/edit/:id' do
+        @contact = Contact.find(params[:id])
+        @reps = current_user.reps
+        erb :'contacts/edit'
+    end
+
+    patch '/contacts/edit/:id' do
+        
+    end
+
 end

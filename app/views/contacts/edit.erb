@@ -1,0 +1,18 @@
+<h1>Edit Contact</h1>
+<form action="/contacts/edit" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+    <h2>Contact with <%=Rep.find(@contact.rep_id).name%></h2>
+    <label for="contact_issue">Issue: </label>
+    <input type="text" name="contact[issue]" id="contact_issue" value="<%=@contact.issue%>">
+    <br><br>
+    <label for="contact_description">Description: </label>
+    <br>
+    <textarea rows="10" cols="50" name="contacts[description]"><%=@contact.description%></textarea>
+    <br><br>
+    <input type="checkbox" id="has_responded" name="contacts[has_responded]" value="true" <%if @contact.has_responded%>checked<%end%>>
+    <label for="has_responded">Response received</label>
+    <input type="checkbox" id="is_meaningful" name="contacts[is_meaningful]" value="true" <%if @contact.is_meaningful%>checked<%end%>>
+    <label for="has_responded">Response was meaningful</label>
+    <br><br>
+    <input type="submit" id="submit_changes" value="Save Changes">
+</form>
