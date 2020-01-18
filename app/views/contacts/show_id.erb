@@ -1,1 +1,14 @@
-Individual Rep Contact Page
+<h1>Contacts</h1>
+
+<h2>Your Contacts with <%=@rep.name%></h2>
+
+<div>
+    <%@contacts.each do |contact|%>
+        <div>
+            <h4>Issue: <%=contact.issue%></h4>
+            <%=contact.description%>
+            <br><br>
+            <a href="">Edit</a> | <a href="">Delete</a>
+        </div>
+    <%end%>
+</div>

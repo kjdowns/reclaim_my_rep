@@ -13,11 +13,13 @@ class ContactController < ApplicationController
     end
 
     get '/contacts/show' do
+        @reps = current_user.reps
         erb :'contacts/show'
     end
 
     get '/contacts/show/:id' do
         @rep = Rep.find(params[:id])
+        @contacts = Contact.where("rep_id = ? AND user_id = ?", @rep.id, current_user.id)
         erb :'contacts/show_id'
     end
 
