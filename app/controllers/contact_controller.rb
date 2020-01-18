@@ -25,12 +25,12 @@ class ContactController < ApplicationController
 
     get '/contacts/edit/:id' do
         @contact = Contact.find(params[:id])
-        @reps = current_user.reps
         erb :'contacts/edit'
     end
 
     patch '/contacts/edit/:id' do
-        
+        Contact.update(params[:id], params[:contacts])
+        redirect "/contacts/show/#{Contact.find(params[:id]).rep_id}"
     end
 
 end
