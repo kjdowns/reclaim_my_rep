@@ -1,0 +1,16 @@
+body {
+    font-family: 'Special Elite', cursive;
+    text-shadow: 4px 4px 4px #aaa;
+    background: url(/images/background.jpg) repeat;
+  }
+
+p {
+    font-family: 'Josefin Slab', serif;
+}
+
+.flex-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+  }
