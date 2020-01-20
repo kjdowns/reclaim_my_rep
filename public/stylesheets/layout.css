@@ -1,15 +1,8 @@
-  html, body {
-      position:fixed;
-      top:0;
-      bottom:0;
-      left:0;
-      right:0;
-  }
 
   body {
     font-family: 'Special Elite', cursive;
     text-shadow: 4px 4px 4px #aaa;
-    background-color: #71381e;
+    margin: 0px;
   }
 
   p {
@@ -21,11 +14,24 @@
     width: 100vw;
     height: 100vh;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   header {
-      background-color: #a97f57;
+      background: url(/images/parchment-body.jpg);
+      background-size: cover;
       height: 20%;
+      width: 100%;
+  }
+
+  #layout-header {
+      height: 50%;
+  }
+
+  #layout-text {
+      height: 30%;
+      justify-self: center;
   }
 
   header h1 {
@@ -38,8 +44,35 @@
       margin-left: 80px;
   }
 
+  nav {
+      background: url(/images/parchment-header.jpg);
+      position: relative;
+      left: 1200px;
+      top: -30px;
+      width: 35%;
+      height: 40%;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+  }
+
+  div #menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #menu li {
+      padding: 10px;
+      list-style-type: none;
+      height: 100%;
+      width: 100%;
+      font-size: 24px;
+  }
+
   main {
-    background-color: #c0a077;
+    background: url(/images/parchment-body-2.jpg);
+    background-size: cover;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -49,6 +82,7 @@
 
   main #index_header {
       margin: 10px;
+      margin-top: 50px;
       height: 10%;
       font-size: 24px;
   }
@@ -57,6 +91,8 @@
       height: 30%;
       width: 50%;
       font-size: 18px;
+      margin: 20px;
+      margin-bottom: 40px;
   }
 
   main #login_buttons {
@@ -70,5 +106,8 @@
 
   footer {
       height: 10%;
-      background-color: #a17750;
+      width: 100%;
+      /* background-color: #a17750; */
+      background: url(/images/parchment-body.jpg);
+      background-size: cover;
   }
