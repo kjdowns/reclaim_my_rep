@@ -13,6 +13,7 @@
         <header>
                 <h1>Reclaim My Rep</h1>
                 <p>Remind them who they represent.</p>
+            <%if logged_in?%>
             <nav>
                 <ul>
                     <div id="menu">
@@ -21,8 +22,11 @@
                     </div>
                 </ul>
             </nav>
+            <%end%>
         </header>
-        <%=yield%>
+            <main>
+                <%=yield%>
+            </main>
         <footer>
         </footer>
     </div>

@@ -74,6 +74,7 @@
     background: url(/images/parchment-body-2.jpg);
     background-size: cover;
     height: 70%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
