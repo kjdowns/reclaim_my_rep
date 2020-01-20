@@ -9,20 +9,19 @@
 </head>
 
 <body>
-    <div class="flex-container">
         <header>
                 <h1>Reclaim My Rep</h1>
                 <p>Remind them who they represent.</p>
             <%if logged_in?%>
             <nav>
+            <div id="menu">
                 <ul>
-                    <div id="menu">
                         <a href="/reps/show"><li>Reps</li></a>
                         <a href="/contacts/show"><li>Contacts</li></a>
                         <a href="/users/profile"><li>Account</li></a>
                         <a href="/users/logout"><li>Logout</li></a>
-                    </div>
                 </ul>
+                </div>
             </nav>
             <%end%>
         </header>
@@ -31,7 +30,6 @@
             </main>
         <footer>
         </footer>
-    </div>
 </body>
 
 </html>
