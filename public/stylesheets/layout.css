@@ -105,6 +105,13 @@
     margin: 30px;
   }
 
+  section .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
   footer {
       height: 10%;
       width: 100%;
