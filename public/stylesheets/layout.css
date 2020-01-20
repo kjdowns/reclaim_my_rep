@@ -113,17 +113,9 @@
     margin: 30px;
   }
 
-  section .form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
   footer {
       height: 10%;
       width: 100%;
-      /* background-color: #a17750; */
       background: url(/images/parchment-body.jpg);
       background-size: cover;
   }
