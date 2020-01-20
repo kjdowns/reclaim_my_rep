@@ -1,16 +1,74 @@
-body {
-    font-family: 'Special Elite', cursive;
-    text-shadow: 4px 4px 4px #aaa;
-    background: url(/images/background.jpg) repeat;
+  html, body {
+      position:fixed;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
   }
 
-p {
-    font-family: 'Josefin Slab', serif;
-}
+  body {
+    font-family: 'Special Elite', cursive;
+    text-shadow: 4px 4px 4px #aaa;
+    background-color: #71381e;
+  }
 
-.flex-container {
+  p {
+      font-family: 'Josefin Slab', serif;
+  }
+
+  .flex-container {
     display: flex;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
+  }
+
+  header {
+      background-color: #a97f57;
+      height: 20%;
+  }
+
+  header h1 {
+      font-size: 50px;
+      margin-left: 40px;
+  }
+
+  header p {
+      font-size: 30px;
+      margin-left: 80px;
+  }
+
+  main {
+    background-color: #c0a077;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main #index_header {
+      margin: 10px;
+      height: 10%;
+      font-size: 24px;
+  }
+
+  main #index_body {
+      height: 30%;
+      width: 50%;
+      font-size: 18px;
+  }
+
+  main #login_buttons {
+      height: 60%;
+      flex-direction: row;
+  }
+
+  main #login_buttons a {
+    margin: 30px;
+  }
+
+  footer {
+      height: 10%;
+      background-color: #a17750;
   }
