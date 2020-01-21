@@ -135,6 +135,13 @@ main #login_buttons a {
     float: right;
 }
 
+input, textarea {
+    border-style: outset;
+    padding: 2px;
+    margin-left: 5px;
+    background-color: beige;
+}
+
   footer {
     height: 10%;
     width: 100%;
