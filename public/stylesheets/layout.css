@@ -135,6 +135,23 @@ main #login_buttons a {
     float: right;
 }
 
+#add-rep input[type="submit"] {
+    float: left;
+}
+
+#add-rep div, #find-rep div {
+    text-align: center;
+    margin: 10px;
+}
+
+#find-rep input[type="submit"] {
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 input, textarea {
     border-style: outset;
     padding: 2px;

@@ -1,18 +1,11 @@
-<h1>Add Reps</h1>
-
-<p>Fill out the form below to add a representative. Using the "Find My Rep" button will 
-automatically find and add your Senators and Congressional Representative based on the 
-address provided in your user profile. A valid US address is required for this feature.
-If one is not found, you will be redirected to create your representative manually.</p>
-
-<h2>Find My Reps</h2>
-
-<form action="/find_my_reps" method="GET">
-    <input type="submit" id="find_my_reps" value="Find My Reps">
-</form>
-
+<div class="page-head">
+    <h1>Add Reps</h1>
+</div>
+<div class="model-container">
+<div id="add-rep" class="model-card form-input">
+<div>
 <h2>Add New Rep</h2>
-
+</div>
 <form action="/reps/new" method="POST">
     <p>
         <label for="rep_title">Title: </label>
@@ -64,3 +57,24 @@ If one is not found, you will be redirected to create your representative manual
     </p>
     <input type="submit" id="add_rep" value="Add Rep">
 </form>
+</div>
+<div id="find-rep" class="model-card">
+<div>
+<h2>Find My Reps</h2>
+</div>
+<p>
+Fill out the form to add a representative. Using the "Find My Rep" button will 
+<br>
+automatically find and add your Senators and Congressional Representative based on 
+<br>
+the address provided in your user profile. A valid US address is required for this feature.
+<br>
+If one is not found, you will need to create your representative manually.
+</p>
+<form action="/find_my_reps" method="GET">
+    <div>
+    <input type="submit" id="find_my_reps" value="Find My Reps">
+    </div>
+</form>
+</div>
+</div>
