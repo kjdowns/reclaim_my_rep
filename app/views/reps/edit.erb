@@ -1,6 +1,7 @@
 <h1>Edit Rep</h1>
 <%address = @rep.address.split(",")%>
 <form action="/reps/edit/<%=@rep.id%>" method="POST">
+    <div class="form-input">
     <input type="hidden" id="hidden" name="_method" value="patch">
     <p>
         <label for="rep_title">Title: </label>
@@ -46,5 +47,6 @@
         <label for="rep_twitter">Twitter: </label>
         <input type="text" name="rep[twitter]" id="rep_twitter" value="<%=@rep.twitter%>">
     </p>
+    </div>
     <input type="submit" id="change_rep" value="Save Changes">
 </form>
