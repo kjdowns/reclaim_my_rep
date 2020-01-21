@@ -1,3 +1,4 @@
+require 'rack-flash'
 class UserController < ApplicationController
     
     get '/users/login' do
@@ -11,7 +12,8 @@ class UserController < ApplicationController
             session[:user_id] = user.id
             redirect '/reps/show'
         else
-            "error message"
+            flash[:message] = "Invalid username or password. Please try again."
+            redirect :'users/login'
         end
     end
 
@@ -31,7 +33,8 @@ class UserController < ApplicationController
             session[:user_id] = @user.id
             redirect '/reps/show'
         else 
-            "This user already exists"
+            flash[:message] = "This user already exists. Please choose a different username."
+            redirect :'/users/signup'
         end
     end
 
@@ -51,7 +54,8 @@ class UserController < ApplicationController
             end
             redirect 'users/profile'
         else
-            "Incorrect password"
+            flash[:message] = "Incorrect password. Please try again."
+            redirect :'/users/edit'
         end
     end
 

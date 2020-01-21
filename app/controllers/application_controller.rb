@@ -1,4 +1,6 @@
+require 'rack-flash'
 class ApplicationController < Sinatra::Base
+    use Rack::Flash, :sweep => true
     
     configure do
         set :views, "app/views"

@@ -1,4 +1,7 @@
 <section id="login">
+    <% if flash.has?(:message) %>
+        <p><%= flash[:message] %></p>
+    <% end %>
     <h1>Log in</h1>
     <h3>Please enter your credentials to log in</h3>
     <form action="/users/login" method="POST">
