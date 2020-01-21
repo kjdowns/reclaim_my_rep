@@ -29,7 +29,7 @@ class UserController < ApplicationController
         @user = User.new(params[:user])
         if @user.save
             session[:user_id] = @user.id
-            redirect '/reps/home'
+            redirect '/reps/show'
         else 
             "This user already exists"
         end
