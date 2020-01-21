@@ -131,6 +131,10 @@ main #login_buttons a {
     width: 100%;
 }
 
+.form-input input {
+    float: right;
+}
+
   footer {
     height: 10%;
     width: 100%;
