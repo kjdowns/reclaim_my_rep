@@ -14,6 +14,7 @@ body {
 
 p {
     font-family: 'Josefin Slab', serif;
+    font-weight: 600;
 }
 
 header {
@@ -31,6 +32,10 @@ header h1 {
 header p {
     font-size: 30px;
     margin-left: 80px;
+}
+
+#index_header {
+    font-size: 24px;
 }
 
 nav {
@@ -142,6 +147,7 @@ main #login_buttons a {
 #add-rep div, #find-rep div {
     text-align: center;
     margin: 10px;
+    font-size: 18px;
 }
 
 #find-rep input[type="submit"] {
