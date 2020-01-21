@@ -1,12 +1,17 @@
+<div class="page-head">
 <h1>Contacts</h1>
-
 <h2>Your Contacts with <%=@rep.name%></h2>
-
-<div>
+</div>
+<div class="model-container">
     <%@contacts.each do |contact|%>
-        <div>
+        <div class="model-card">
             <h4>Issue: <%=contact.issue%></h4>
             <%=contact.description%>
+            <br><br>
+            <input type="checkbox" id="has_responded" disabled="disabled" <%if contact.has_responded%>checked<%end%>>>
+            <label for="has_responded">Response received</label>
+            <input type="checkbox" id="is_meaningful" disabled="disabled" <%if contact.is_meaningful%>checked<%end%>>>
+            <label for="is_meaningful">Response was meaningful</label>
             <br><br>
             <a href="/contacts/edit/<%=contact.id%>">Edit</a> | <a href="/contacts/delete/<%=contact.id%>">Delete</a>
         </div>
