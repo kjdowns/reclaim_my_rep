@@ -9,7 +9,7 @@ class UserController < ApplicationController
 
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
-            redirect '/reps/home'
+            redirect '/reps/show'
         else
             "error message"
         end
