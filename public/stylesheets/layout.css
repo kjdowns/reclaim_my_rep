@@ -103,6 +103,14 @@ main #login_buttons a {
   margin: 30px;
 }
 
+#rep-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
   footer {
     height: 10%;
     width: 100%;

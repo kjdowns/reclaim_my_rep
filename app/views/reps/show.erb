@@ -1,7 +1,9 @@
-<h1><%= current_user.name %>'s Reps</h1>
+<!--
+<h1><%= current_user.name %>'s Reps</h1>-->
+<div id="rep-container">
 <%current_user.reps.each do |rep|%>
     <%address = rep.address.split(",")%>
-    <div>
+    <div id="rep-card">
         <h3><%=rep.title%> - <%=rep.name%></h3>
         <ul>
             <li>
@@ -31,3 +33,4 @@
         </div>
     </div>
 <%end%>
+</div>
