@@ -1,13 +1,11 @@
 <div class="page-head">
 <h1><%= current_user.name %>'s Reps</h1>
-
     <a href="/reps/new">Add Rep</a> | <a href="/contacts/show">View All Contacts</a> | <a href="/reps/delete/all">Delete All Reps</a>
-
 </div>
-<div id="rep-container">
+<div class="model-container">
 <%current_user.reps.each do |rep|%>
     <%address = rep.address.split(",")%>
-    <div id="rep-card">
+    <div class="model-card">
         <h3><%=rep.title%> - <%=rep.name%></h3>
         <ul>
             <li>

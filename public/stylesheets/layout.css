@@ -104,7 +104,7 @@ main #login_buttons a {
   margin: 30px;
 }
 
-#rep-container {
+.model-container {
     display: flex;
     width: 100%;
     height: 80%;
@@ -116,7 +116,7 @@ main #login_buttons a {
     align-self: flex-end;
 }
 
-#rep-card {
+.model-card {
     margin: 20px;
     padding: 20px;
     border-style: outset;
