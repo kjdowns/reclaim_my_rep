@@ -8,6 +8,18 @@ class ApplicationController < Sinatra::Base
         set :session_secret, "toast"    
     end
 
+    before do
+        if request.path != '/' 
+            if request.path != '/users/login' 
+                if request.path != '/users/signup'
+                    if !logged_in?
+                        redirect '/'
+                    end
+                end
+            end
+        end
+    end
+
     get '/' do
         erb :index
     end
