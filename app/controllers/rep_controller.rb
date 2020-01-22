@@ -8,7 +8,7 @@ class RepController < ApplicationController
     post '/reps/new' do
         params[:rep][:address] = params[:rep][:address].join(",")
         current_user.reps << Rep.create(params[:rep])
-        redirect '/reps/home'
+        redirect '/reps/show'
     end
 
     get '/find_my_reps' do
@@ -17,11 +17,11 @@ class RepController < ApplicationController
         RepAPI.create_rep_from_api(result, 3, current_user)
         RepAPI.create_rep_from_api(result, 4, current_user)
         @user_reps = current_user.reps
-        redirect '/reps/home'
+        redirect '/reps/show'
     end
 
     get '/reps/home' do
-        erb :'reps/home'
+        erb :'reps/show'
     end
 
     get '/reps/show' do
@@ -30,7 +30,9 @@ class RepController < ApplicationController
 
     get '/reps/edit/:id' do
         @rep = Rep.find(params[:id])
-        erb :'reps/edit'
+        if belongs_to_user?(@rep)
+            erb :'reps/edit'
+        end
     end
 
     patch '/reps/edit/:id' do
@@ -41,22 +43,30 @@ class RepController < ApplicationController
 
     get '/reps/show/:id' do
         @rep = Rep.find(params[:id])
-        erb :'reps/show_id'
+        if belongs_to_user?(@rep)
+            erb :'reps/show_id'
+        end
     end
 
     get '/reps/delete/all' do
         Rep.where(user_id: current_user).destroy_all
-        redirect '/reps/home'
+        redirect '/reps/show'
     end
 
     get '/reps/delete/show/:id' do
-        Rep.find(params[:id]).destroy
+        @rep = Rep.find(params[:id])
+        if belongs_to_user?(@rep)
+            @rep.destroy
+        end
         redirect '/reps/show'
     end
 
     get '/reps/delete/:id' do
-        Rep.find(params[:id]).destroy
-        redirect '/reps/home'
+        @rep = Rep.find(params[:id])
+        if belongs_to_user?(@rep)
+            @rep.destroy
+        end
+        redirect '/reps/show'
     end
 
 end
