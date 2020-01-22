@@ -25,7 +25,9 @@ class ContactController < ApplicationController
 
     get '/contacts/edit/:id' do
         @contact = Contact.find(params[:id])
-        erb :'contacts/edit'
+        if belongs_to_user?(@contact)
+            erb :'contacts/edit'
+        end
     end
 
     patch '/contacts/edit/:id' do
@@ -35,7 +37,10 @@ class ContactController < ApplicationController
 
     get '/contacts/delete/:id' do
         @rep_id = Contact.find(params[:id]).rep_id
-        Contact.destroy(params[:id])
+        @contact = Contact.find(params[:id])
+        if belongs_to_user?(@contact)
+            @contact.destroy
+        end
         redirect "/contacts/show/#{@rep_id}"
     end
 
