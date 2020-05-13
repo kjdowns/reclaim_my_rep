@@ -50,6 +50,12 @@ class ApplicationController < Sinatra::Base
             (model.user_id) == current_user.id
         end
 
+        def redirect_if_not_allowed(model)
+            if !belongs_to_user?(model)
+                redirect '/'
+            end
+        end
+
     end
 
 end

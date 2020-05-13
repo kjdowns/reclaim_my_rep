@@ -43,9 +43,8 @@ class RepController < ApplicationController
 
     get '/reps/show/:id' do
         @rep = Rep.find(params[:id])
-        if belongs_to_user?(@rep)
-            erb :'reps/show_id'
-        end
+        redirect_if_not_allowed(@rep)
+        erb :'reps/show_id'
     end
 
     get '/reps/delete/all' do
@@ -68,5 +67,6 @@ class RepController < ApplicationController
         end
         redirect '/reps/show'
     end
+
 
 end
