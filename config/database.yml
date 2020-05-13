@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: reclaim_my_rep_development
+  host: 127.0.0.1
+  username: postgres
+  password: 20072826
+
+  test:
+  <<: *default
+  database: reclaim_my_rep_test
+  host: 127.0.0.1
+  username: postgres
+  password: 20072826
+
+production:
+  <<: *default
+  database: reclaim_my_rep_production
