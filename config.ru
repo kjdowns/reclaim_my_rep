@@ -5,5 +5,3 @@ use ContactController
 use RepController
 use UserController
 run ApplicationController
-
-use Rack::Static, :urls => ['/stylesheets', '/images'], :root => 'public'
