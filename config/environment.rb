@@ -8,6 +8,8 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 #   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 # )
 
+set :public_folder, File.join(APP_ROOT, "public")
+
 configure :production do
   db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
