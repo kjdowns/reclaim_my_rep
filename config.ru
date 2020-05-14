@@ -4,4 +4,5 @@ use Rack::MethodOverride
 use ContactController
 use RepController
 use UserController
-run ApplicationController
+# run ApplicationController
+run Sinatra::Application
