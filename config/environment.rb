@@ -22,3 +22,4 @@ configure :production do
 end
 
 require_all 'app'
+require_all 'public'
